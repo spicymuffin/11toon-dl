@@ -4,8 +4,8 @@ import shutil
 
 workpath = os.getcwd()
 
-url = "http://103.204.13.68:8901/bbs/board.php?bo_table=toons&wr_id=757&stx=%EB%8F%84%EC%BF%84%EA%B5%AC%EC%9A%B8&is=7"
-#url = input("URL: ")
+#url = "http://103.204.13.68:8901/bbs/board.php?bo_table=toons&wr_id=757&stx=%EB%8F%84%EC%BF%84%EA%B5%AC%EC%9A%B8&is=7"
+url = input("Download from (input URL): ")
 
 r = requests.get(url)
 
@@ -23,7 +23,6 @@ path = f.readline()
 f.close()
 
 title = temp[:-1]
-
 path += "\\" + title
 os.mkdir(path)
 print(f"Title: {title}")
@@ -55,3 +54,5 @@ for i in range(img_count):
     else:
         print(r.status_code)
         exit(0)
+
+print("Done!")

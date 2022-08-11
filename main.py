@@ -17,12 +17,17 @@ for j in range(title_pos, title_pos + 256):
     temp += html[j]
     if html[j] == '"':
         break
+
+f = open(workpath + "\\" + "config.txt")
+path = f.readline()
+f.close()
+
 title = temp[:-1]
-path = workpath + "\\" + title
+
+path += "\\" + title
 os.mkdir(path)
 print(f"Title: {title}")
 print(f"Path: {path}")
-
 
 pos_img_list = html.find("img_list") + 11
 temp = ""
